@@ -1,0 +1,41 @@
+<form
+  [formGroup]="formGroup"
+  class="nx-margin-bottom-l"
+>
+  <div nxLayout="grid">
+    <div nxRow *aclTag="'headline'">
+      <div nxCol="12">
+        <h3 class="header" data-testid="headline" i18n="@@test-spp.headline">test-spp</h3>
+      </div>
+    </div>
+    <div nxRow *aclTag="'subheadline'" data-testid="subheadline">
+      <div nxCol="12">
+        <p i18n="@@test-spp.subheadline">This BB was auto-generated with `@allianz/taly-schematics` 🤖.</p>
+      </div>
+    </div>
+    <div nxRow *aclTag="'person'" formGroupName="person">
+      <div nxCol="12,12,6">
+        <nx-formfield *aclTag="'first-name'" i18n-nxLabel="@@test-spp.first-name" nxLabel="First Name">
+          <input
+            nxInput
+            placeholder="Enter first name"
+            i18n-placeholder="@@test-spp.first-name-placeholder"
+            data-testid="firstNameInput"
+            formControlName="firstName"
+          />
+        </nx-formfield>
+      </div>
+      <div nxCol="12,12,6">
+        <nx-formfield *aclTag="'last-name'" i18n-nxLabel="@@test-spp.last-name" nxLabel="Last Name">
+          <input
+            nxInput
+            placeholder="Enter last name"
+            i18n-placeholder="@@test-spp.last-name-placeholder"
+            data-testid="lastNameInput"
+            formControlName="lastName"
+          />
+        </nx-formfield>
+      </div>
+    </div>
+  </div>
+</form>

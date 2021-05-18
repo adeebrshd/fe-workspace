@@ -1,0 +1,20 @@
+-
+  aclKey: headline
+  aclType: display
+  label: Headline
+-
+  aclKey: subheadline
+  aclType: display
+  label: Subheadline
+-
+  aclKey: person
+  aclType: display
+  label: Person
+-
+  aclKey: person/first-name
+  aclType: form-control
+  label: First Name
+-
+  aclKey: person/last-name
+  aclType: form-control
+  label: Last Name

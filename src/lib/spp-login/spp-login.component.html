@@ -1,0 +1,48 @@
+<form [formGroup]="formGroup">
+  <div nxLayout="grid">
+      <div nxLayout="grid">
+          <div nxRow nxRowJustify="center" class="nx-margin-top-3xl" *aclTag="'title'" data-testid="loginTitle">
+              <h1 i18n="@@fnol-login.title" nxHeadline="page" class="u-text-center">
+                  Login</h1>  
+          </div>
+          <div nxRow nxRowJustify="center" *aclTag="'username'" data-testid="userName">
+              <div nxCol="12,12,4">
+                  <nx-formfield i18n-nxLabel="@@fnol-login.input.username" nxLabel="User ID">
+                      <input nxInput formControlName="username"/>    
+                      <nx-error i18n-nxLabel="@@common.validation.required" nxFormfieldError *ngIf="formGroup.get('username')?.errors?.required">
+                          This field is mandatory.
+                      </nx-error>
+                  </nx-formfield>
+              </div>
+          </div>
+          <div nxRow nxRowJustify="center" *aclTag="'password'" data-testid="passWord">
+              <div nxCol="12,12,4">
+                  <nx-formfield i18n-nxLabel="@@fnol-login.input.password" nxLabel="Password">
+                      <input nxInput formControlName="password" type="password"/>
+                      <nx-error i18n-nxLabel="@@common.validation.required" nxFormfieldError *ngIf="formGroup.get('password')?.errors?.required">
+                          This field is mandatory.
+                      </nx-error>
+                  </nx-formfield>
+              </div>
+          </div>
+          <div nxRow nxRowJustify="center">
+              <div nxCol="12,12,4">
+                  <nx-error *ngIf="data?.loginResponse?.message">
+                      {{ data.loginResponse.message }}
+                  </nx-error>
+              </div>
+          </div>  
+          <div nxRow nxRowJustify="center">
+              <div nxCol="12" class="u-text-center">
+                  <button 
+                      i18n="@@fnol-login.button.login"
+                      nxButton="primary" 
+                      [disabled]="!formGroup.valid" 
+                      (click)="login()"
+                  >Login
+                  </button>
+              </div>   
+          </div>                    
+      </div>
+  </div>
+</form>
